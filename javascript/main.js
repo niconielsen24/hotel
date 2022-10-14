@@ -1,6 +1,7 @@
 const ham = document.getElementById(`ham`)
 const menu = document.getElementById(`menu`)
-let navLink = document.getElementsByClassName(`navBar__link`)
+const navLink = document.getElementsByClassName(`navBar__link`)
+const bod = document.getElementsByTagName(`body`)
 
 ham.addEventListener("click", ()=>{
     ham.classList.toggle("active")
@@ -13,4 +14,3 @@ for (const link of navLink) {
         menu.classList.remove("active")
     })
 }
-

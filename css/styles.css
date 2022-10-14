@@ -1,3 +1,9 @@
+@keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100%; } }
+
 * {
   margin: 0;
   border: 0;
@@ -11,30 +17,14 @@ html {
 body {
   background-color: #F4EBD0;
   margin: 0rem;
-  width: 100%; }
+  width: 100%;
+  animation: fadein .4s; }
 
 header {
   margin: 0;
   background-color: #122620;
   width: 100%;
   padding: 1rem; }
-
-footer {
-  text-align: center;
-  width: 100%;
-  padding: 1rem;
-  margin: 0rem;
-  background-color: #B68D40; }
-
-h1 {
-  text-align: center;
-  font-size: 4rem; }
-
-p {
-  text-align: center;
-  font-size: 2rem;
-  margin: .5rem;
-  word-spacing: .2rem; }
 
 .navBar {
   background-color: #122620;
@@ -55,13 +45,42 @@ p {
     text-decoration: none;
     color: black;
     transition: all .5s ease;
+    background-color: #F4EBD0;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
     font-size: 2rem;
     font-style: auto;
     color: auto; }
   .navBar__item {
-    transition: all .5s; }
-    .navBar__item:hover {
-      background-color: #F4EBD0; }
+    transition: all .5s;
+    text-align: center;
+    padding: 1rem; }
+
+.titulo {
+  margin: 1rem 0rem;
+  background-image: url(../assets/lago.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+  padding: 10rem;
+  font-weight: 900; }
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  margin: 0rem;
+  background-color: #B68D40; }
+
+h1 {
+  text-align: center;
+  font-size: 4rem; }
+
+p {
+  text-align: center;
+  font-size: 2rem;
+  margin: .5rem;
+  word-spacing: .2rem; }
 
 .habitacion {
   align-content: center;
@@ -74,12 +93,17 @@ p {
 .logo__footer {
   padding: 1rem;
   align-self: center; }
+  .logo__footer-img {
+    max-width: 3.2rem;
+    max-height: auto; }
 
 @media (max-width: 768px) {
   .navBar__menu {
     margin: 0;
     position: fixed;
     top: -100%;
+    left: 0;
+    right: 0;
     background-color: #122620;
     width: 100%;
     transition: .3s; }
