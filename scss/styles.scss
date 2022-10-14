@@ -1,0 +1,124 @@
+$color_prim : #122620;
+$color_sec : #D6AD60;
+$color_ter : #F4EBD0;
+$color_cuar: #B68D40;
+
+@mixin fuente($tam,$col,$style){
+    font-size: $tam;
+    font-style: $style;
+    color: $col; 
+}
+
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: $color_ter;
+    margin: 0rem;
+    width: 100%;
+}
+header{
+    margin: 0;
+    background-color: $color_prim;
+    width: 100%;
+    padding: 1rem;
+}
+footer{
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    margin: 0rem;
+    background-color: $color_cuar;
+}
+h1{
+    text-align: center;
+    font-size: 4rem;
+}
+p{
+    text-align: center;
+    font-size: 2rem;
+    margin: .5rem;
+    word-spacing: .2rem;
+}
+.navBar{
+    background-color: $color_prim;
+    transition: all .5s;
+    min-height: 2rem;
+    &__ham{
+        display: none;
+        cursor: pointer;
+    }
+    &__bar{
+        width: 3rem;
+        height: .4rem;
+        margin: .6rem auto;
+        border-radius: .2rem;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        background-color: white;
+    }
+    &__link{
+        text-decoration: none;
+        color: black;
+        transition: all .5s ease;
+        @include fuente(2rem, auto, auto)
+    }
+    &__item{
+        transition: all .5s;
+        &:hover{
+            background-color: $color_ter;
+        }
+    }
+}
+.habitacion{
+    align-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+.logo{
+    &__nav{
+        padding: 1rem;
+    }
+    &__footer{
+        padding: 1rem;
+        align-self: center;
+    }
+}
+
+@media(max-width: 768px){
+    .navBar{
+        &__menu{
+            margin: 0;
+            position: fixed;
+            top: -100%;
+            background-color: #122620;
+            width: 100%;
+            transition: .3s;
+            &.active{
+                top: 7rem;
+            }
+        }
+        &__ham{
+            display: block;
+            margin: 0;
+            padding: 1rem 0;
+            &.active .navBar__bar:nth-child(2){
+                opacity: 0;
+            }
+            &.active .navBar__bar:nth-child(1){
+                transform: translateY(1rem) rotate(45deg);
+            }
+            &.active .navBar__bar:nth-child(3){
+                transform: translateY(-1rem) rotate(-45deg);
+            }
+        }
+    }
+}
